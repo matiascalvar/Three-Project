@@ -195,10 +195,10 @@ moon.position.setX(-10);
 // jeff.position.z = -5;
 // jeff.position.x = 2;
 
-// dodecahedron earth
+// sphere earth
 const earthTexture = new THREE.TextureLoader().load('earth.jpg');
 const material3 = new THREE.MeshStandardMaterial( { map : earthTexture, normalMap: normalTexture } );
-const geometry3 = new THREE.DodecahedronBufferGeometry(2,0);
+const geometry3 = new THREE.SphereGeometry(2, 32, 32);
 const dode = new THREE.Mesh(geometry3, material3);
 scene.add(dode);
 dode.position.z = -5;
@@ -212,10 +212,10 @@ function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
+  //moon.rotation.z += 0.05;
 
   dode.rotation.y += 0.01;
-  dode.rotation.z += 0.01;
+  //dode.rotation.z += 0.01;
 
   camera.position.z = t * -0.01;
   camera.position.x = t * -0.0002;
@@ -236,7 +236,7 @@ function animate() {
 
   moon.rotation.x += 0.005;
 
-  dode.rotation.x += 0.01;
+  //dode.rotation.x += 0.01;
   dode.rotation.y += 0.005;
 
   // controls.update();
